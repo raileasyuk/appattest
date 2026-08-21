@@ -1,5 +1,7 @@
 # AppAttest
 
+> Forked from https://github.com/bas-d/appattest
+
 Since iOS 14, Apple offers a [new way](https://developer.apple.com/documentation/devicecheck/validating_apps_that_connect_to_your_server) to attest the integrity of a device. This is based on the [WebAuthn](https://www.w3.org/TR/webauthn-2/) specification. This go module implements the server-side validation of both attestations and assertions that can be obtained using the [DCAppAttestService](https://developer.apple.com/documentation/devicecheck/dcappattestservice).
 
 ## Installation
