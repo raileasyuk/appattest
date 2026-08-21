@@ -1,5 +1,5 @@
 module github.com/raileasyuk/appattest
 
-go 1.15
+go 1.26
 
-require github.com/ugorji/go/codec v1.2.4
+require github.com/ugorji/go/codec v1.3.2
