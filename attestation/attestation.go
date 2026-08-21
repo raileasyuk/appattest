@@ -156,6 +156,8 @@ func verifyAttestation(att AttestationObject, clientDataHash, keyID []byte) ([]b
 		Roots:         roots,
 		Intermediates: intermediates,
 		CurrentTime:   TimeNow(),
+		// Override key usage, since Apple does not set the required key usage for App Attest certificates
+		KeyUsages: []x509.ExtKeyUsage{x509.ExtKeyUsageAny},
 	}
 
 	// 1. Verify that the x5c array contains the intermediate and leaf certificates for App Attest,
