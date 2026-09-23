@@ -1,6 +1,6 @@
 module github.com/raileasyuk/appattest
 
-go 1.26.0
+go 1.27.1
 
 require (
 	github.com/go-webauthn/webauthn v0.18.2
