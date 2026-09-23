@@ -89,7 +89,7 @@ func (aar *AuthenticatorAssertionResponse) parse() (*Assertion, error) {
 		return nil, utils.ErrParsingData.WithDetails(err.Error())
 	}
 
-	err = a.AuthenticatorData.Unmarshal(a.RawAuthenticatorData)
+	err = a.AuthenticatorData.UnmarshalAssertion(a.RawAuthenticatorData)
 	if err != nil {
 		return nil, fmt.Errorf("error decoding auth data: %v", err)
 	}

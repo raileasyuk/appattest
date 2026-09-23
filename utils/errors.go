@@ -5,15 +5,9 @@ type Error struct {
 	Type string `json:"type"`
 	// Additional details about the error
 	Details string `json:"error"`
-	// Information to help debug the error
-	DevInfo string `json:"debug"`
 }
 
 var (
-	ErrBadRequest = &Error{
-		Type:    "invalid_request",
-		Details: "Error reading the requst data",
-	}
 	ErrChallengeMismatch = &Error{
 		Type:    "challenge_mismatch",
 		Details: "Stored challenge and received challenge do not match",
@@ -25,10 +19,6 @@ var (
 	ErrVerification = &Error{
 		Type:    "verification_error",
 		Details: "Error validating the authenticator response",
-	}
-	ErrAttestation = &Error{
-		Type:    "attesation_error",
-		Details: "Error validating the attestation data provided",
 	}
 	ErrInvalidAttestation = &Error{
 		Type:    "invalid_attestation",
@@ -55,11 +45,5 @@ func (err *Error) Error() string {
 func (passedError *Error) WithDetails(details string) *Error {
 	err := *passedError
 	err.Details = details
-	return &err
-}
-
-func (passedError *Error) WithInfo(info string) *Error {
-	err := *passedError
-	err.DevInfo = info
 	return &err
 }
